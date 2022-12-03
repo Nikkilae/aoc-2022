@@ -91,15 +91,10 @@ fn solve_part_2<T: AsRef<str>>(lines: impl Iterator<Item = T>) -> i32 {
 }
 
 #[test]
-fn test() {
-    assert_eq!(solve_part_1(read_lines("input/d2_test.txt").unwrap()), 15);
-    assert_eq!(
-        solve_part_1(read_lines("input/d2_real.txt").unwrap()),
-        13221
-    );
-    assert_eq!(solve_part_2(read_lines("input/d2_test.txt").unwrap()), 12);
-    assert_eq!(
-        solve_part_2(read_lines("input/d2_real.txt").unwrap()),
-        13131
-    );
+fn test() -> Result<(), Box<dyn Error>> {
+    assert_eq!(solve_part_1(read_lines("input/d2_test.txt")?), 15);
+    assert_eq!(solve_part_1(read_lines("input/d2_real.txt")?), 13221);
+    assert_eq!(solve_part_2(read_lines("input/d2_test.txt")?), 12);
+    assert_eq!(solve_part_2(read_lines("input/d2_real.txt")?), 13131);
+    Ok(())
 }

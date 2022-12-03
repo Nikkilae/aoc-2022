@@ -3,14 +3,8 @@ use std::error::Error;
 use aoc_2022::read_lines;
 
 fn main() -> Result<(), Box<dyn Error>> {
-    println!(
-        "Part 1: {}",
-        solve_part_1(read_lines("input/d3_real.txt")?)?
-    );
-    println!(
-        "Part 2: {}",
-        solve_part_2(read_lines("input/d3_real.txt")?)?
-    );
+    println!("Part 1: {}", solve_part_1(read_lines("input/d3_real.txt")?));
+    println!("Part 2: {}", solve_part_2(read_lines("input/d3_real.txt")?));
     Ok(())
 }
 
@@ -43,43 +37,30 @@ fn sum_of_priorities<T: AsRef<str>>(strings: &[T]) -> i32 {
         .sum::<i32>()
 }
 
-fn solve_part_1<T: AsRef<str>>(lines: impl Iterator<Item = T>) -> Result<i32, Box<dyn Error>> {
-    let sum = lines
+fn solve_part_1<T: AsRef<str>>(lines: impl Iterator<Item = T>) -> i32 {
+    lines
         .map(|line| {
             let line = line.as_ref();
             let (compartment1, compartment2) = line.split_at(line.len() / 2);
             sum_of_priorities(&[compartment1, compartment2])
         })
-        .sum();
-    Ok(sum)
+        .sum()
 }
 
-fn solve_part_2<T: AsRef<str>>(lines: impl Iterator<Item = T>) -> Result<i32, Box<dyn Error>> {
-    let sum = lines
+fn solve_part_2<T: AsRef<str>>(lines: impl Iterator<Item = T>) -> i32 {
+    lines
         .map(|line| line.as_ref().to_string())
         .collect::<Vec<_>>()
         .chunks_exact(3)
         .map(sum_of_priorities)
-        .sum();
-    Ok(sum)
+        .sum()
 }
 
 #[test]
-fn test() {
-    assert_eq!(
-        solve_part_1(read_lines("input/d3_test.txt").unwrap()).unwrap(),
-        157
-    );
-    assert_eq!(
-        solve_part_1(read_lines("input/d3_real.txt").unwrap()).unwrap(),
-        8243
-    );
-    assert_eq!(
-        solve_part_2(read_lines("input/d3_test.txt").unwrap()).unwrap(),
-        70
-    );
-    assert_eq!(
-        solve_part_2(read_lines("input/d3_real.txt").unwrap()).unwrap(),
-        2631
-    );
+fn test() -> Result<(), Box<dyn Error>> {
+    assert_eq!(solve_part_1(read_lines("input/d3_test.txt")?), 157);
+    assert_eq!(solve_part_1(read_lines("input/d3_real.txt")?), 8243);
+    assert_eq!(solve_part_2(read_lines("input/d3_test.txt")?), 70);
+    assert_eq!(solve_part_2(read_lines("input/d3_real.txt")?), 2631);
+    Ok(())
 }
