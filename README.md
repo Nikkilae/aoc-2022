@@ -2,6 +2,8 @@
 
 This is a repository of all my [Advent of Code 2022](https://adventofcode.com/2022) solutions in [Rust](https://www.rust-lang.org/).
 
-Included in the repository are my puzzle input data and automated tests with the correct solution.
+Included in the repository are my puzzle input data and automated tests with the correct solutions.
 
-To run the solutions, install Rust and Cargo and do `cargo run --bin d1` where d1 stands for day 1, d2 for day 2 etc.
+Run the desktop GUI application: `cargo run --bin gui`<br/>
+Run individual solutions with the CLI: `cargo run --bin cli <day number> <part number> <input file path>`<br/>
+Run tests: `cargo test`

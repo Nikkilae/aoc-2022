@@ -1,13 +1,5 @@
 use std::error::Error;
 
-use aoc_2022::read_lines;
-
-fn main() -> Result<(), Box<dyn Error>> {
-    println!("Part 1: {}", solve_part_1(read_lines("input/d2_real.txt")?));
-    println!("Part 2: {}", solve_part_2(read_lines("input/d2_real.txt")?));
-    Ok(())
-}
-
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum RPS {
     Rock,
@@ -82,19 +74,20 @@ fn parse_line_part_2<T: AsRef<str>>(line: T) -> Option<(RPS, RPS)> {
     Some((opponent, you))
 }
 
-fn solve_part_1<T: AsRef<str>>(lines: impl Iterator<Item = T>) -> i32 {
-    lines.filter_map(parse_line_part_1).map(rps_score).sum()
+pub fn solve_part_1(input: &str) -> Result<String, Box<dyn Error>> {
+    Ok(input
+        .lines()
+        .filter_map(parse_line_part_1)
+        .map(rps_score)
+        .sum::<i32>()
+        .to_string())
 }
 
-fn solve_part_2<T: AsRef<str>>(lines: impl Iterator<Item = T>) -> i32 {
-    lines.filter_map(parse_line_part_2).map(rps_score).sum()
-}
-
-#[test]
-fn test() -> Result<(), Box<dyn Error>> {
-    assert_eq!(solve_part_1(read_lines("input/d2_test.txt")?), 15);
-    assert_eq!(solve_part_1(read_lines("input/d2_real.txt")?), 13221);
-    assert_eq!(solve_part_2(read_lines("input/d2_test.txt")?), 12);
-    assert_eq!(solve_part_2(read_lines("input/d2_real.txt")?), 13131);
-    Ok(())
+pub fn solve_part_2(input: &str) -> Result<String, Box<dyn Error>> {
+    Ok(input
+        .lines()
+        .filter_map(parse_line_part_2)
+        .map(rps_score)
+        .sum::<i32>()
+        .to_string())
 }
