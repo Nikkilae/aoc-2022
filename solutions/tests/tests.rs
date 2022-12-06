@@ -42,3 +42,12 @@ fn day3() -> Result<(), Box<dyn Error>> {
     assert_eq!(&d3::solve_part_2(&read_test_file("d3_real.txt")?)?, "2631");
     Ok(())
 }
+
+#[test]
+fn day4() -> Result<(), Box<dyn Error>> {
+    assert_eq!(&d4::solve_part_1(&read_test_file("d4_test.txt")?)?, "2");
+    assert_eq!(&d4::solve_part_1(&read_test_file("d4_real.txt")?)?, "584");
+    assert_eq!(&d4::solve_part_2(&read_test_file("d4_test.txt")?)?, "4");
+    assert_eq!(&d4::solve_part_2(&read_test_file("d4_real.txt")?)?, "933");
+    Ok(())
+}
