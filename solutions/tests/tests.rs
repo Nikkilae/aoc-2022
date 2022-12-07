@@ -66,3 +66,12 @@ fn day5() -> Result<(), Box<dyn Error>> {
     );
     Ok(())
 }
+
+#[test]
+fn day6() -> Result<(), Box<dyn Error>> {
+    assert_eq!(&d6::solve_part_1(&read_test_file("d6_test.txt")?)?, "5");
+    assert_eq!(&d6::solve_part_1(&read_test_file("d6_real.txt")?)?, "1855");
+    assert_eq!(&d6::solve_part_2(&read_test_file("d6_test.txt")?)?, "23");
+    assert_eq!(&d6::solve_part_2(&read_test_file("d6_real.txt")?)?, "3256");
+    Ok(())
+}
