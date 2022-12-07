@@ -6,6 +6,7 @@ edition = "2021"
 
 [dependencies]
 lazy_static = "1.4.0"
+regex = "1.7.0"
 
 [lib]
 name="solutions"

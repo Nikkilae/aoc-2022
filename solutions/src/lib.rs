@@ -4,6 +4,7 @@ pub mod d1;
 pub mod d2;
 pub mod d3;
 pub mod d4;
+pub mod d5;
 
 pub struct Day {
     pub name: String,
@@ -42,7 +43,7 @@ lazy_static::lazy_static! {
         Day::new("Rock Paper Scissors", Some(Solution::new(include_str!("d2.rs").to_string(), d2::solve_part_1, d2::solve_part_2))),
         Day::new("Rucksack Reorganization", Some(Solution::new(include_str!("d3.rs").to_string(), d3::solve_part_1, d3::solve_part_2))),
         Day::new("Camp Cleanup", Some(Solution::new(include_str!("d4.rs").to_string(), d4::solve_part_1, d4::solve_part_2))),
-        Day::new("???", None),
+        Day::new("Supply Stacks", Some(Solution::new(include_str!("d5.rs").to_string(), d5::solve_part_1, d5::solve_part_2))),
         Day::new("???", None),
         Day::new("???", None),
         Day::new("???", None),
