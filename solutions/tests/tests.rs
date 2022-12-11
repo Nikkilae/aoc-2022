@@ -93,3 +93,15 @@ fn day7() -> Result<(), Box<dyn Error>> {
     );
     Ok(())
 }
+
+#[test]
+fn day8() -> Result<(), Box<dyn Error>> {
+    assert_eq!(&d8::solve_part_1(&read_test_file("d8_test.txt")?)?, "21");
+    assert_eq!(&d8::solve_part_1(&read_test_file("d8_real.txt")?)?, "1805");
+    assert_eq!(&d8::solve_part_2(&read_test_file("d8_test.txt")?)?, "8");
+    assert_eq!(
+        &d8::solve_part_2(&read_test_file("d8_real.txt")?)?,
+        "444528"
+    );
+    Ok(())
+}
