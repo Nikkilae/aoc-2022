@@ -105,3 +105,12 @@ fn day8() -> Result<(), Box<dyn Error>> {
     );
     Ok(())
 }
+
+#[test]
+fn day9() -> Result<(), Box<dyn Error>> {
+    assert_eq!(&d9::solve_part_1(&read_test_file("d9_1_test.txt")?)?, "13");
+    assert_eq!(&d9::solve_part_1(&read_test_file("d9_real.txt")?)?, "5907");
+    assert_eq!(&d9::solve_part_2(&read_test_file("d9_2_test.txt")?)?, "36");
+    assert_eq!(&d9::solve_part_2(&read_test_file("d9_real.txt")?)?, "2303");
+    Ok(())
+}
