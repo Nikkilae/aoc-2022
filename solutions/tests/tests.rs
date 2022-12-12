@@ -147,3 +147,24 @@ fn day10() -> Result<(), Box<dyn Error>> {
     );
     Ok(())
 }
+
+#[test]
+fn day11() -> Result<(), Box<dyn Error>> {
+    assert_eq!(
+        &d11::solve_part_1(&read_test_file("d11_test.txt")?)?,
+        "10605"
+    );
+    assert_eq!(
+        &d11::solve_part_1(&read_test_file("d11_real.txt")?)?,
+        "112221"
+    );
+    assert_eq!(
+        &d11::solve_part_2(&read_test_file("d11_test.txt")?)?,
+        "2713310158"
+    );
+    assert_eq!(
+        &d11::solve_part_2(&read_test_file("d11_real.txt")?)?,
+        "25272176808"
+    );
+    Ok(())
+}
