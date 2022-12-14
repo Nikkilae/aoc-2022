@@ -3,6 +3,7 @@ use std::error::Error;
 pub mod d1;
 pub mod d10;
 pub mod d11;
+pub mod d12;
 pub mod d2;
 pub mod d3;
 pub mod d4;
@@ -56,7 +57,7 @@ lazy_static::lazy_static! {
         Day::new("Rope Bridge", Some(Solution::new(include_str!("d9.rs").to_string(), d9::solve_part_1, d9::solve_part_2))),
         Day::new("Cathode-Ray Tube", Some(Solution::new(include_str!("d10.rs").to_string(), d10::solve_part_1, d10::solve_part_2))),
         Day::new("Monkey in the Middle", Some(Solution::new(include_str!("d11.rs").to_string(), d11::solve_part_1, d11::solve_part_2))),
-        Day::new("???", None),
+        Day::new("Hill Climbing Algorithm", Some(Solution::new(include_str!("d12.rs").to_string(), d12::solve_part_1, d12::solve_part_2))),
         Day::new("???", None),
         Day::new("???", None),
         Day::new("???", None),

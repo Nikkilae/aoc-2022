@@ -168,3 +168,12 @@ fn day11() -> Result<(), Box<dyn Error>> {
     );
     Ok(())
 }
+
+#[test]
+fn day12() -> Result<(), Box<dyn Error>> {
+    assert_eq!(&d12::solve_part_1(&read_test_file("d12_test.txt")?)?, "31");
+    assert_eq!(&d12::solve_part_1(&read_test_file("d12_real.txt")?)?, "534");
+    assert_eq!(&d12::solve_part_2(&read_test_file("d12_test.txt")?)?, "29");
+    assert_eq!(&d12::solve_part_2(&read_test_file("d12_real.txt")?)?, "525");
+    Ok(())
+}
