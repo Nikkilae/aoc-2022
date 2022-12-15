@@ -12,6 +12,7 @@ pub mod d09;
 pub mod d10;
 pub mod d11;
 pub mod d12;
+pub mod d13;
 
 pub struct Day {
     pub name: String,
@@ -58,7 +59,7 @@ lazy_static::lazy_static! {
         Day::new("Cathode-Ray Tube", Some(Solution::new(include_str!("d10.rs").to_string(), d10::solve_part_1, d10::solve_part_2))),
         Day::new("Monkey in the Middle", Some(Solution::new(include_str!("d11.rs").to_string(), d11::solve_part_1, d11::solve_part_2))),
         Day::new("Hill Climbing Algorithm", Some(Solution::new(include_str!("d12.rs").to_string(), d12::solve_part_1, d12::solve_part_2))),
-        Day::new("???", None),
+        Day::new("Distress Signal", Some(Solution::new(include_str!("d13.rs").to_string(), d13::solve_part_1, d13::solve_part_2))),
         Day::new("???", None),
         Day::new("???", None),
         Day::new("???", None),
